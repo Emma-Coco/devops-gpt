@@ -15,6 +15,9 @@ Les captures d'écran sont autorisées et même vivement encouragées.
 ---
 
 ## Exercice 1 : Conception Logicielle (6 points)
+
+### **--> (voir PDF dans le dissier Exercice 1 à la racine)**
+
 *Ici, pas de code. Vous pouvez utiliser un outil comme draw.io, un document Word, ou même faire les schémas sur papier et les prendre en photo.*
 
 **1. Diagramme de Contexte (2 pts)**
@@ -42,14 +45,32 @@ Trouvez au moins 4 attributs pertinents.
 
 **1. Méthodologie et Git (2 pts)**
 L'équipe utilise la méthode **Scrum**. On vous demande de développer le système d' **"Abonnement Premium"**.
-- **Question A :** Rédigez cette fonctionnalité sous forme de "User Story" (format : *En tant que... je veux... afin de...*).
+- **Question A** : En tant qu’utilisateur,
+je veux souscrire à un abonnement Premium,
+afin d’accéder à des fonctionnalités avancées et à des réponses plus rapides.
+
 - **Question B :** Donnez les commandes Git exactes à taper dans le terminal pour :
+
   1. Créer une nouvelle feature nommée `feature-premium-subscription` et faire un commit.
+
+git checkout -b feature-premium-subscription
+git add .
+git commit -m "Add premium subscription feature"
+
   2. Une fois le travail terminé et fusionné sur `main`, créer un **tag de version** nommé `v1.0.0`.
+
+git checkout main
+git merge feature-premium-subscription
+git tag v1.0.0
+
   3. Pousser ce tag sur le serveur GitHub.
+
+git push origin main
+git push origin v1.0.0
 
 **2. Dockerisation (3 pts)**
 Le projet est divisé en deux dossiers : `frontend` (l'interface) et `backend` (l'API). Vous devez créer deux fichiers Dockerfiles :
+
 - **Dans le dossier `backend/` :** Créez un `Dockerfile` qui utilise `node:22-alpine`, définit le dossier de travail sur `/app`, installe les dépendances et lance `node index.js` sur le port `3000`.
 - **Dans le dossier `frontend/` :** Créez un `Dockerfile` similaire qui installe les dépendances et lance `npm run dev` pour le développement.
 
@@ -80,5 +101,17 @@ Créez l'arborescence de dossiers `.github/workflows/` et placez-y un fichier `m
 
 **2. Sécurité et Secrets (2 pts)**
 Votre code a besoin d'une clé secrète (`OPENAI_API_KEY`) pour se connecter à l'intelligence artificielle, mais il est strictement interdit de l'écrire en clair dans votre code.
-- **Question A :** Sur l'interface web de GitHub, expliquez où vous devez cliquer pour enregistrer ce secret de manière sécurisée ( captures d'écran autorisées ).
-- **Question B :** Quelle est la syntaxe exacte pour injecter ce secret dans votre fichier `.github/workflows/main.yml` ? (Exemple : comme variable d'environnement dans l'étape de déploiement).
+
+- **Question A** : Settings --> Secrets and variables --> Actions --> New repository secret --> Je l'ai appelé OPENAI_API_KEY (voir screen dans dossier Exercice 3 - Question 2.A à la racine)
+
+- **Question B** :
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+exemple complet : 
+
+- name: Deploy application
+  env:
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  run: echo "Déploiement sécurisé"
+
