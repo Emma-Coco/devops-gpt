@@ -21,7 +21,7 @@ Les captures d'écran sont autorisées et même vivement encouragées.
 
 ## Exercice 1 : Conception Logicielle (6 points)
 
-### **--> (voir PDF dans le dissier Exercice 1 à la racine)**
+### **--> (voir PDF dans le dossier Exercice 1 à la racine)**
 
 *Ici, pas de code. Vous pouvez utiliser un outil comme draw.io, un document Word, ou même faire les schémas sur papier et les prendre en photo.*
 
@@ -56,19 +56,19 @@ afin d’accéder à des fonctionnalités avancées et à des réponses plus rap
 
 - **Question B :** Donnez les commandes Git exactes à taper dans le terminal pour :
 
-  1. Créer une nouvelle feature nommée `feature-premium-subscription` et faire un commit.
+1. Créer une nouvelle feature nommée `feature-premium-subscription` et faire un commit.
 
 git checkout -b feature-premium-subscription
 git add .
 git commit -m "Add premium subscription feature"
 
-  2. Une fois le travail terminé et fusionné sur `main`, créer un **tag de version** nommé `v1.0.0`.
+2. Une fois le travail terminé et fusionné sur `main`, créer un **tag de version** nommé `v1.0.0`.
 
 git checkout main
 git merge feature-premium-subscription
 git tag v1.0.0
 
-  3. Pousser ce tag sur le serveur GitHub.
+3. Pousser ce tag sur le serveur GitHub.
 
 git push origin main
 git push origin v1.0.0
