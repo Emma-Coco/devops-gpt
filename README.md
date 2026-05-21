@@ -1,3 +1,8 @@
+# Lien du repo : 
+
+https://github.com/Emma-Coco/devops-gpt
+
+
 # Évaluation Finale : Software Engineering & DevOps
 **Sujet : Lancement du projet "DevOpsGPT"**
 **Durée : 3h00 | Documents et internet autorisés | Travail individuel**
